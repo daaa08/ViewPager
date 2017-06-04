@@ -9,7 +9,7 @@ ViewPager + TabLayout
 ```java
 
 class PagerAdapter extends FragmentPagerAdapter{
-        List<Fragment> datas;
+        List<Fragment> datas;  // Fragment 데이터를 담음
 
         public PagerAdapter(FragmentManager fm, List<Fragment> datas) {
             super(fm);
@@ -34,6 +34,12 @@ class PagerAdapter extends FragmentPagerAdapter{
 - 페이저가 변경되었을때 탭을 변경해주는 리스너
 
 ```java
+tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        tabLayout.addTab(tabLayout.newTab().setText("1"));
+        tabLayout.addTab(tabLayout.newTab().setText("2"));
+        tabLayout.addTab(tabLayout.newTab().setText("3"));
+        tabLayout.addTab(tabLayout.newTab().setText("4"));
+        
  viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 ```
 
@@ -42,6 +48,8 @@ class PagerAdapter extends FragmentPagerAdapter{
 -  탭이 변경되었을때 페이저를 변경해주는 리스너
 
 ```java
+viewPager = (ViewPager) findViewById(R.id.viewPager);
+
 tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewPager));
 ```
 
