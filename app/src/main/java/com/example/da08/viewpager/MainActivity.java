@@ -91,8 +91,7 @@ public class MainActivity extends AppCompatActivity {
         if(checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED){
         }else{
             // 2. 권한이 없으면 사용자에 권한을 달라고 요청
-            String permissions[] = { Manifest.permission.WRITE_EXTERNAL_STORAGE
-                    , Manifest.permission.CAMERA };
+            String permissions[] = {Manifest.permission.ACCESS_FINE_LOCATION};
             requestPermissions(permissions ,REQ_PERMISSION); // -> 권한을 요구하는 팝업이 사용자 화면에 노출된다
         }
     }
